@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistance - Hostel Management</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav-header">
+            <h1>Request Assistance</h1>
+            <div class="nav-links">
+                <a href="student-dashboard.html" class="nav-link">Dashboard</a>
+                <a href="student-complaints.html" class="nav-link">Complaints</a>
+                <a href="student-profile.html" class="nav-link">Profile</a>
+                <a href="student-assistance.html" class="nav-link active">Assistance</a>
+                <a href="student-products.html" class="nav-link">Products</a>
+                <a href="index.html" class="nav-link">Logout</a>
+            </div>
+        </div>
+        
+        <main class="main-content">
+            <div style="width: 100%;">
+                <div class="tabs">
+                    <button class="tab active" onclick="switchTab('new-request')">New Request</button>
+                    <button class="tab" onclick="switchTab('my-requests')">My Requests</button>
+                </div>
+                
+                <!-- New Assistance Request -->
+                <div id="new-request" class="tab-content active">
+                    <div class="card">
+                        <h3>Request Assistance</h3>
+                        <form id="assistanceForm">
+                            <div class="form-group">
+                                <label for="assistanceType">Type of Assistance</label>
+                                <select id="assistanceType" required>
+                                    <option value="">Select Type</option>
+                                    <option value="maintenance">Maintenance Support</option>
+                                    <option value="technical">Technical Support</option>
+                                    <option value="housekeeping">Housekeeping</option>
+                                    <option value="laundry">Laundry Service</option>
+                                    <option value="general">General Help</option>
+                                    <option value="emergency">Emergency</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="urgency">Urgency Level</label>
+                                <select id="urgency" required>
+                                    <option value="">Select Urgency</option>
+                                    <option value="low">Low - Can wait</option>
+                                    <option value="medium">Medium - Within a day</option>
+                                    <option value="high">High - Within hours</option>
+                                    <option value="urgent">Urgent - Immediate</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="title">Request Title</label>
+                                <input type="text" id="title" required placeholder="Brief description of what you need">
+                            </div>
+                            <div class="form-group">
+                                <label for="details">Detailed Description</label>
+                                <textarea id="details" rows="4" required placeholder="Provide detailed information about the assistance you need"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="preferredTime">Preferred Time</label>
+                                <select id="preferredTime">
+                                    <option value="">No preference</option>
+                                    <option value="morning">Morning (8 AM - 12 PM)</option>
+                                    <option value="afternoon">Afternoon (12 PM - 5 PM)</option>
+                                    <option value="evening">Evening (5 PM - 8 PM)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactMethod">Preferred Contact Method</label>
+                                <select id="contactMethod">
+                                    <option value="phone">Phone Call</option>
+                                    <option value="email">Email</option>
+                                    <option value="visit">Room Visit</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit Request</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- My Requests -->
+                <div id="my-requests" class="tab-content">
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <div>
+                                <strong>Request #AR001</strong>
+                                <span class="status-badge status-progress">In Progress</span>
+                            </div>
+                            <small style="color: #6b7280;">1 hour ago</small>
+                        </div>
+                        <h4 style="margin-bottom: 0.5rem;">Room cleaning service</h4>
+                        <p style="color: #6b7280; margin-bottom: 1rem;">Need deep cleaning of room 205 before parents visit this weekend.</p>
+                        <div style="display: flex; gap: 1rem; font-size: 0.875rem; color: #6b7280; margin-bottom: 1rem;">
+                            <span>Type: Housekeeping</span>
+                            <span>Urgency: Medium</span>
+                            <span>Preferred: Afternoon</span>
+                        </div>
+                        <div style="background: #f3f4f6; padding: 1rem; border-radius: 8px;">
+                            <strong style="color: #374151;">Staff Response:</strong>
+                            <p style="color: #6b7280; margin-top: 0.5rem;">Cleaning staff has been assigned. They will visit your room tomorrow afternoon between 2-4 PM.</p>
+                            <small style="color: #6b7280;">- Housekeeping Manager, 30 minutes ago</small>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <div>
+                                <strong>Request #AR002</strong>
+                                <span class="status-badge status-completed">Completed</span>
+                            </div>
+                            <small style="color: #6b7280;">Yesterday</small>
+                        </div>
+                        <h4 style="margin-bottom: 0.5rem;">WiFi connection issues</h4>
+                        <p style="color: #6b7280; margin-bottom: 1rem;">Internet connection is very slow in room 205, unable to attend online classes.</p>
+                        <div style="display: flex; gap: 1rem; font-size: 0.875rem; color: #6b7280; margin-bottom: 1rem;">
+                            <span>Type: Technical</span>
+                            <span>Urgency: High</span>
+                            <span>Preferred: Morning</span>
+                        </div>
+                        <div style="background: #f3f4f6; padding: 1rem; border-radius: 8px;">
+                            <strong style="color: #374151;">Resolution:</strong>
+                            <p style="color: #6b7280; margin-top: 0.5rem;">Router was reset and connection optimized. Speed test shows normal performance. Issue resolved.</p>
+                            <small style="color: #6b7280;">- IT Support Team, Yesterday 3:45 PM</small>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <div>
+                                <strong>Request #AR003</strong>
+                                <span class="status-badge status-pending">Pending</span>
+                            </div>
+                            <small style="color: #6b7280;">2 days ago</small>
+                        </div>
+                        <h4 style="margin-bottom: 0.5rem;">Laundry service booking</h4>
+                        <p style="color: #6b7280; margin-bottom: 1rem;">Need to schedule weekly laundry pickup and delivery service.</p>
+                        <div style="display: flex; gap: 1rem; font-size: 0.875rem; color: #6b7280;">
+                            <span>Type: Laundry</span>
+                            <span>Urgency: Low</span>
+                            <span>Preferred: Morning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="scripts/assistance.js"></script>
+</body>
+</html>

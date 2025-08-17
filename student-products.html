@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Hostel Management</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav-header">
+            <h1>Registered Products</h1>
+            <div class="nav-links">
+                <a href="student-dashboard.html" class="nav-link">Dashboard</a>
+                <a href="student-complaints.html" class="nav-link">Complaints</a>
+                <a href="student-profile.html" class="nav-link">Profile</a>
+                <a href="student-assistance.html" class="nav-link">Assistance</a>
+                <a href="student-products.html" class="nav-link active">Products</a>
+                <a href="index.html" class="nav-link">Logout</a>
+            </div>
+        </div>
+        
+        <main class="main-content">
+            <div style="width: 100%;">
+                <div class="tabs">
+                    <button class="tab active" onclick="switchTab('register-product')">Register Product</button>
+                    <button class="tab" onclick="switchTab('my-products')">My Products</button>
+                </div>
+                
+                <!-- Register New Product -->
+                <div id="register-product" class="tab-content active">
+                    <div class="card">
+                        <h3>Register Electronic Device</h3>
+                        <form id="productForm">
+                            <div class="form-group">
+                                <label for="productType">Product Type</label>
+                                <select id="productType" required>
+                                    <option value="">Select Product Type</option>
+                                    <option value="laptop">Laptop</option>
+                                    <option value="smartphone">Smartphone</option>
+                                    <option value="tablet">Tablet</option>
+                                    <option value="gaming-console">Gaming Console</option>
+                                    <option value="camera">Camera</option>
+                                    <option value="headphones">Headphones</option>
+                                    <option value="smartwatch">Smartwatch</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="brand">Brand</label>
+                                <input type="text" id="brand" required placeholder="e.g., Apple, Samsung, Dell">
+                            </div>
+                            <div class="form-group">
+                                <label for="model">Model</label>
+                                <input type="text" id="model" required placeholder="e.g., MacBook Pro, Galaxy S24">
+                            </div>
+                            <div class="form-group">
+                                <label for="serialNumber">Serial Number</label>
+                                <input type="text" id="serialNumber" required placeholder="Device serial number">
+                            </div>
+                            <div class="form-group">
+                                <label for="purchaseDate">Purchase Date</label>
+                                <input type="date" id="purchaseDate">
+                            </div>
+                            <div class="form-group">
+                                <label for="purchasePrice">Purchase Price ($)</label>
+                                <input type="number" id="purchasePrice" step="0.01" placeholder="0.00">
+                            </div>
+                            <div class="form-group">
+                                <label for="warrantyExpiry">Warranty Expiry Date</label>
+                                <input type="date" id="warrantyExpiry">
+                            </div>
+                            <div class="form-group">
+                                <label for="condition">Current Condition</label>
+                                <select id="condition" required>
+                                    <option value="">Select Condition</option>
+                                    <option value="excellent">Excellent</option>
+                                    <option value="good">Good</option>
+                                    <option value="fair">Fair</option>
+                                    <option value="poor">Poor</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Additional Description</label>
+                                <textarea id="description" rows="3" placeholder="Any additional details about the device"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Register Product</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- My Products -->
+                <div id="my-products" class="tab-content">
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <div>
+                                <strong>MacBook Pro 16"</strong>
+                                <span class="status-badge status-completed">Active</span>
+                            </div>
+                            <div style="text-align: right;">
+                                <div style="font-size: 0.875rem; color: #6b7280;">Registered: Jan 15, 2024</div>
+                                <div style="font-size: 0.875rem; color: #6b7280;">ID: PRD001</div>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                            <div>
+                                <strong>Brand:</strong> Apple
+                            </div>
+                            <div>
+                                <strong>Model:</strong> MacBook Pro
+                            </div>
+                            <div>
+                                <strong>Serial:</strong> C02XK1ACJGH5
+                            </div>
+                            <div>
+                                <strong>Condition:</strong> Excellent
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                            <div>
+                                <strong>Purchase Date:</strong> Dec 20, 2023
+                            </div>
+                            <div>
+                                <strong>Purchase Price:</strong> $2,499.00
+                            </div>
+                            <div>
+                                <strong>Warranty:</strong> Dec 20, 2024
+                            </div>
+                            <div>
+                                <strong>Status:</strong> 
+                                <span style="color: #10b981;">✓ Under Warranty</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                            <button class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Edit</button>
+                            <button class="btn" style="background: #ef4444; color: white; font-size: 0.875rem; padding: 0.5rem 1rem;">Report Lost/Stolen</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <div>
+                                <strong>iPhone 15 Pro</strong>
+                                <span class="status-badge status-completed">Active</span>
+                            </div>
+                            <div style="text-align: right;">
+                                <div style="font-size: 0.875rem; color: #6b7280;">Registered: Sep 22, 2023</div>
+                                <div style="font-size: 0.875rem; color: #6b7280;">ID: PRD002</div>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                            <div>
+                                <strong>Brand:</strong> Apple
+                            </div>
+                            <div>
+                                <strong>Model:</strong> iPhone 15 Pro
+                            </div>
+                            <div>
+                                <strong>Serial:</strong> F2LX3KACJGH5
+                            </div>
+                            <div>
+                                <strong>Condition:</strong> Good
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                            <div>
+                                <strong>Purchase Date:</strong> Sep 22, 2023
+                            </div>
+                            <div>
+                                <strong>Purchase Price:</strong> $999.00
+                            </div>
+                            <div>
+                                <strong>Warranty:</strong> Sep 22, 2024
+                            </div>
+                            <div>
+                                <strong>Status:</strong> 
+                                <span style="color: #10b981;">✓ Under Warranty</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                            <button class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Edit</button>
+                            <button class="btn" style="background: #ef4444; color: white; font-size: 0.875rem; padding: 0.5rem 1rem;">Report Lost/Stolen</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <div>
+                                <strong>Dell XPS 13</strong>
+                                <span class="status-badge" style="background: #fee2e2; color: #991b1b;">Lost</span>
+                            </div>
+                            <div style="text-align: right;">
+                                <div style="font-size: 0.875rem; color: #6b7280;">Registered: Aug 10, 2023</div>
+                                <div style="font-size: 0.875rem; color: #6b7280;">ID: PRD003</div>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                            <div>
+                                <strong>Brand:</strong> Dell
+                            </div>
+                            <div>
+                                <strong>Model:</strong> XPS 13
+                            </div>
+                            <div>
+                                <strong>Serial:</strong> 5CG8441
+                            </div>
+                            <div>
+                                <strong>Condition:</strong> Good
+                            </div>
+                        </div>
+                        <div style="background: #fef2f2; padding: 1rem; border-radius: 8px; border-left: 4px solid #ef4444;">
+                            <strong style="color: #991b1b;">Reported Lost</strong>
+                            <p style="color: #7f1d1d; margin-top: 0.5rem;">Reported missing on Oct 15, 2024. Security has been notified.</p>
+                        </div>
+                        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                            <button class="btn btn-success" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Mark as Found</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="scripts/products.js"></script>
+</body>
+</html>

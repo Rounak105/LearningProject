@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Hostel Management</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav-header">
+            <h1>Student Dashboard</h1>
+            <div class="nav-links">
+                <a href="student-dashboard.html" class="nav-link active">Dashboard</a>
+                <a href="student-complaints.html" class="nav-link">Complaints</a>
+                <a href="student-profile.html" class="nav-link">Profile</a>
+                <a href="student-assistance.html" class="nav-link">Assistance</a>
+                <a href="student-products.html" class="nav-link">Products</a>
+                <a href="index.html" class="nav-link">Logout</a>
+            </div>
+        </div>
+        
+        <main class="main-content">
+            <div style="width: 100%;">
+                <div class="card">
+                    <h2 style="color: #1f2937; margin-bottom: 1rem;">Welcome back, John Doe!</h2>
+                    <p style="color: #6b7280;">Room 205 | Block A</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                    <div class="card" style="text-align: center; cursor: pointer;" onclick="window.location.href='student-complaints.html'">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">📝</div>
+                        <h3>Register Complaint</h3>
+                        <p style="color: #6b7280;">File maintenance or facility complaints</p>
+                        <div style="margin-top: 1rem;">
+                            <span class="status-badge status-pending">3 Active</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card" style="text-align: center; cursor: pointer;" onclick="window.location.href='student-profile.html'">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">👤</div>
+                        <h3>Personal Details</h3>
+                        <p style="color: #6b7280;">Manage your profile information</p>
+                        <div style="margin-top: 1rem;">
+                            <span class="status-badge status-completed">Updated</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card" style="text-align: center; cursor: pointer;" onclick="window.location.href='student-assistance.html'">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🆘</div>
+                        <h3>Request Assistance</h3>
+                        <p style="color: #6b7280;">Get help from hostel staff</p>
+                        <div style="margin-top: 1rem;">
+                            <span class="status-badge status-progress">1 Pending</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card" style="text-align: center; cursor: pointer;" onclick="window.location.href='student-products.html'">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">📱</div>
+                        <h3>Registered Products</h3>
+                        <p style="color: #6b7280;">Manage your electronic devices</p>
+                        <div style="margin-top: 1rem;">
+                            <span class="status-badge status-completed">5 Items</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Recent Activity</h3>
+                    <div style="space-y: 1rem;">
+                        <div style="padding: 1rem; background: #f9fafb; border-radius: 8px; margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <strong>Complaint #001</strong> - AC not working
+                                    <div style="color: #6b7280; font-size: 0.875rem;">Submitted 2 hours ago</div>
+                                </div>
+                                <span class="status-badge status-progress">In Progress</span>
+                            </div>
+                        </div>
+                        <div style="padding: 1rem; background: #f9fafb; border-radius: 8px; margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <strong>Assistance Request</strong> - Room cleaning
+                                    <div style="color: #6b7280; font-size: 0.875rem;">Requested yesterday</div>
+                                </div>
+                                <span class="status-badge status-completed">Completed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="scripts/dashboard.js"></script>
+</body>
+</html>

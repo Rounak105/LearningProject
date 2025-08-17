@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaints - Hostel Management</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav-header">
+            <h1>Complaint Management</h1>
+            <div class="nav-links">
+                <a href="student-dashboard.html" class="nav-link">Dashboard</a>
+                <a href="student-complaints.html" class="nav-link active">Complaints</a>
+                <a href="student-profile.html" class="nav-link">Profile</a>
+                <a href="student-assistance.html" class="nav-link">Assistance</a>
+                <a href="student-products.html" class="nav-link">Products</a>
+                <a href="index.html" class="nav-link">Logout</a>
+            </div>
+        </div>
+        
+        <main class="main-content">
+            <div style="width: 100%;">
+                <div class="tabs">
+                    <button class="tab active" onclick="switchTab('new-complaint')">New Complaint</button>
+                    <button class="tab" onclick="switchTab('my-complaints')">My Complaints</button>
+                </div>
+                
+                <!-- New Complaint Form -->
+                <div id="new-complaint" class="tab-content active">
+                    <div class="card">
+                        <h3>File a New Complaint</h3>
+                        <form id="complaintForm">
+                            <div class="form-group">
+                                <label for="category">Category</label>
+                                <select id="category" required>
+                                    <option value="">Select Category</option>
+                                    <option value="maintenance">Maintenance</option>
+                                    <option value="facilities">Facilities</option>
+                                    <option value="security">Security</option>
+                                    <option value="cleanliness">Cleanliness</option>
+                                    <option value="noise">Noise</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="priority">Priority Level</label>
+                                <select id="priority" required>
+                                    <option value="">Select Priority</option>
+                                    <option value="low">Low</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="high">High</option>
+                                    <option value="urgent">Urgent</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <textarea id="description" rows="5" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="location">Location</label>
+                                <input type="text" id="location" placeholder="e.g., Room 205, Common Area">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit Complaint</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- My Complaints -->
+                <div id="my-complaints" class="tab-content">
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <div>
+                                <strong>Complaint #001</strong>
+                                <span class="status-badge status-progress">In Progress</span>
+                            </div>
+                            <small style="color: #6b7280;">2 hours ago</small>
+                        </div>
+                        <h4 style="margin-bottom: 0.5rem;">AC not working in room</h4>
+                        <p style="color: #6b7280; margin-bottom: 1rem;">The air conditioning unit in room 205 has stopped working. It's getting very hot.</p>
+                        <div style="display: flex; gap: 1rem; font-size: 0.875rem; color: #6b7280;">
+                            <span>Category: Maintenance</span>
+                            <span>Priority: High</span>
+                            <span>Location: Room 205</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <div>
+                                <strong>Complaint #002</strong>
+                                <span class="status-badge status-completed">Resolved</span>
+                            </div>
+                            <small style="color: #6b7280;">1 day ago</small>
+                        </div>
+                        <h4 style="margin-bottom: 0.5rem;">Broken light in corridor</h4>
+                        <p style="color: #6b7280; margin-bottom: 1rem;">The light in the 2nd floor corridor is flickering and needs replacement.</p>
+                        <div style="display: flex; gap: 1rem; font-size: 0.875rem; color: #6b7280;">
+                            <span>Category: Maintenance</span>
+                            <span>Priority: Medium</span>
+                            <span>Location: 2nd Floor Corridor</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <div>
+                                <strong>Complaint #003</strong>
+                                <span class="status-badge status-pending">Pending</span>
+                            </div>
+                            <small style="color: #6b7280;">3 days ago</small>
+                        </div>
+                        <h4 style="margin-bottom: 0.5rem;">Noise from neighboring room</h4>
+                        <p style="color: #6b7280; margin-bottom: 1rem;">Excessive noise during study hours from room 206.</p>
+                        <div style="display: flex; gap: 1rem; font-size: 0.875rem; color: #6b7280;">
+                            <span>Category: Noise</span>
+                            <span>Priority: Medium</span>
+                            <span>Location: Room 206</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="scripts/complaints.js"></script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Hostel Management</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav-header">
+            <h1>Personal Details</h1>
+            <div class="nav-links">
+                <a href="student-dashboard.html" class="nav-link">Dashboard</a>
+                <a href="student-complaints.html" class="nav-link">Complaints</a>
+                <a href="student-profile.html" class="nav-link active">Profile</a>
+                <a href="student-assistance.html" class="nav-link">Assistance</a>
+                <a href="student-products.html" class="nav-link">Products</a>
+                <a href="index.html" class="nav-link">Logout</a>
+            </div>
+        </div>
+        
+        <main class="main-content">
+            <div style="width: 100%;">
+                <div class="tabs">
+                    <button class="tab active" onclick="switchTab('personal-info')">Personal Info</button>
+                    <button class="tab" onclick="switchTab('contact-details')">Contact Details</button>
+                    <button class="tab" onclick="switchTab('hostel-info')">Hostel Info</button>
+                    <button class="tab" onclick="switchTab('security')">Security</button>
+                </div>
+                
+                <!-- Personal Information -->
+                <div id="personal-info" class="tab-content active">
+                    <div class="card">
+                        <h3>Personal Information</h3>
+                        <form id="personalInfoForm">
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" value="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="studentId">Student ID</label>
+                                <input type="text" id="studentId" value="STU2024001" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="dateOfBirth">Date of Birth</label>
+                                <input type="date" id="dateOfBirth" value="2000-05-15">
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Gender</label>
+                                <select id="gender">
+                                    <option value="male" selected>Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="course">Course</label>
+                                <input type="text" id="course" value="Computer Science">
+                            </div>
+                            <div class="form-group">
+                                <label for="year">Academic Year</label>
+                                <select id="year">
+                                    <option value="1">1st Year</option>
+                                    <option value="2" selected>2nd Year</option>
+                                    <option value="3">3rd Year</option>
+                                    <option value="4">4th Year</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update Information</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Contact Details -->
+                <div id="contact-details" class="tab-content">
+                    <div class="card">
+                        <h3>Contact Information</h3>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" value="john.doe@university.edu">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" value="+1234567890">
+                            </div>
+                            <div class="form-group">
+                                <label for="alternatePhone">Alternate Phone</label>
+                                <input type="tel" id="alternatePhone" value="+0987654321">
+                            </div>
+                            <div class="form-group">
+                                <label for="homeAddress">Home Address</label>
+                                <textarea id="homeAddress" rows="3">123 Main Street, City, State 12345</textarea>
+                            </div>
+                            <h4 style="margin: 2rem 0 1rem 0;">Emergency Contact</h4>
+                            <div class="form-group">
+                                <label for="emergencyName">Emergency Contact Name</label>
+                                <input type="text" id="emergencyName" value="Jane Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="emergencyRelation">Relationship</label>
+                                <input type="text" id="emergencyRelation" value="Mother">
+                            </div>
+                            <div class="form-group">
+                                <label for="emergencyPhone">Emergency Contact Phone</label>
+                                <input type="tel" id="emergencyPhone" value="+1122334455">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update Contact Details</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Hostel Information -->
+                <div id="hostel-info" class="tab-content">
+                    <div class="card">
+                        <h3>Hostel Assignment</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+                            <div style="text-align: center;">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🏠</div>
+                                <strong>Block A</strong>
+                                <div style="color: #6b7280;">Building</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🚪</div>
+                                <strong>205</strong>
+                                <div style="color: #6b7280;">Room Number</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">👥</div>
+                                <strong>2</strong>
+                                <div style="color: #6b7280;">Occupancy</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">📅</div>
+                                <strong>Aug 2024</strong>
+                                <div style="color: #6b7280;">Check-in Date</div>
+                            </div>
+                        </div>
+                        
+                        <h4>Room Facilities</h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span style="color: #10b981;">✓</span> Air Conditioning
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span style="color: #10b981;">✓</span> Wi-Fi
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span style="color: #10b981;">✓</span> Study Table
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span style="color: #10b981;">✓</span> Wardrobe
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span style="color: #10b981;">✓</span> Attached Bathroom
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span style="color: #10b981;">✓</span> Balcony
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Security Settings -->
+                <div id="security" class="tab-content">
+                    <div class="card">
+                        <h3>Security Settings</h3>
+                        <form id="securityForm">
+                            <div class="form-group">
+                                <label for="currentPassword">Current Password</label>
+                                <input type="password" id="currentPassword">
+                            </div>
+                            <div class="form-group">
+                                <label for="newPassword">New Password</label>
+                                <input type="password" id="newPassword">
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmNewPassword">Confirm New Password</label>
+                                <input type="password" id="confirmNewPassword">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Change Password</button>
+                        </form>
+                        
+                        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e5e7eb;">
+                            <h4>Account Activity</h4>
+                            <div style="margin-top: 1rem;">
+                                <div style="display: flex; justify-content: space-between; padding: 0.5rem 0;">
+                                    <span>Last Login</span>
+                                    <span style="color: #6b7280;">Today, 2:30 PM</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; padding: 0.5rem 0;">
+                                    <span>Password Last Changed</span>
+                                    <span style="color: #6b7280;">30 days ago</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; padding: 0.5rem 0;">
+                                    <span>Account Created</span>
+                                    <span style="color: #6b7280;">Aug 15, 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="scripts/profile.js"></script>
+</body>
+</html>

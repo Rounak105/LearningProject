@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Management System</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Hostel Management System</h1>
+            <p>Choose your access panel</p>
+        </header>
+        
+        <main class="main-content">
+            <div class="panel-selection">
+                <div class="panel-card student-panel" onclick="navigateToPanel('student')">
+                    <div class="panel-icon">👨‍🎓</div>
+                    <h2>Student Panel</h2>
+                    <p>Access your hostel services, file complaints, and manage your profile</p>
+                    <button class="panel-btn student-btn">Enter Student Panel</button>
+                </div>
+                
+                <div class="panel-card admin-panel" onclick="navigateToPanel('admin')">
+                    <div class="panel-icon">👨‍💼</div>
+                    <h2>Admin Panel</h2>
+                    <p>Manage hostel operations, handle complaints, and oversee student services</p>
+                    <button class="panel-btn admin-btn">Enter Admin Panel</button>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <p>&copy; 2024 Hostel Management System. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <script src="scripts/main.js"></script>
+</body>
+</html>
